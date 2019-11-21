@@ -88,8 +88,7 @@ class Expresion():
         ret = Expresion(nuevaExpresion, self.ops1, self.ops2, self.funciones)
         return ret
 
-    def evaluar(self, valores):
-        valores = valores or {}
+    def evaluar(self, valores = {}):
         nStack = []
         for item in self.tokens:
             tipo_ = item.tipo_
