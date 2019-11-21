@@ -91,7 +91,6 @@ class Expresion():
     def evaluar(self, valores):
         valores = valores or {}
         nStack = []
-        L = len(self.tokens)
         for item in self.tokens:
             tipo_ = item.tipo_
             if tipo_ == TNUMERO:
@@ -532,7 +531,7 @@ class Parser:
                     break
                 elif c == 'u':
                     codePoint = int(v[i + 1, i + 5], 16)
-                    buffer.append(unichr(codePoint))
+                    buffer.append(codePoint)
                     i += 4
                     break
                 else:
